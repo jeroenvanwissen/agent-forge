@@ -76,8 +76,8 @@ Or with curl:
 
 ```bash
 mkdir -p .agent
-curl -sL https://raw.githubusercontent.com/YOUR_USERNAME/agent-forge/main/template/.agent/ANALYZE.md -o .agent/ANALYZE.md
-curl -sL https://raw.githubusercontent.com/YOUR_USERNAME/agent-forge/main/template/.agent/ADDITIONAL-RULES.md -o .agent/ADDITIONAL-RULES.md
+curl -sL https://raw.githubusercontent.com/jeroenvanwissen/agent-forge/main/template/.agent/ANALYZE.md -o .agent/ANALYZE.md
+curl -sL https://raw.githubusercontent.com/jeroenvanwissen/agent-forge/main/template/.agent/ADDITIONAL-RULES.md -o .agent/ADDITIONAL-RULES.md
 ```
 
 ### 2. Run the analysis
