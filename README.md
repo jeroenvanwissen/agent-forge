@@ -70,6 +70,9 @@ cp path/to/agent-forge/template/.agent/ANALYZE.md .agent/ANALYZE.md
 
 # Copy the optional rules reference (recommended)
 cp path/to/agent-forge/template/.agent/ADDITIONAL-RULES.md .agent/ADDITIONAL-RULES.md
+
+# Copy the multi-agent setup guide (recommended)
+cp path/to/agent-forge/template/.agent/MULTI-AGENT-SETUP.md .agent/MULTI-AGENT-SETUP.md
 ```
 
 Or with curl:
@@ -78,6 +81,7 @@ Or with curl:
 mkdir -p .agent
 curl -sL https://raw.githubusercontent.com/jeroenvanwissen/agent-forge/main/template/.agent/ANALYZE.md -o .agent/ANALYZE.md
 curl -sL https://raw.githubusercontent.com/jeroenvanwissen/agent-forge/main/template/.agent/ADDITIONAL-RULES.md -o .agent/ADDITIONAL-RULES.md
+curl -sL https://raw.githubusercontent.com/jeroenvanwissen/agent-forge/main/template/.agent/MULTI-AGENT-SETUP.md -o .agent/MULTI-AGENT-SETUP.md
 ```
 
 ### 2. Run the analysis
@@ -125,7 +129,8 @@ agent-forge/
 ├── template/
 │   └── .agent/
 │       ├── ANALYZE.md              # Core analysis instructions (copy to your project)
-│       └── ADDITIONAL-RULES.md     # Optional rule templates for specialized domains
+│       ├── ADDITIONAL-RULES.md     # Optional rule templates for specialized domains
+│       └── MULTI-AGENT-SETUP.md    # Multi-agent configuration guide (copy to your project)
 ├── docs/
 │   ├── IMPLEMENTATION-GUIDE.md     # Detailed step-by-step setup guide
 │   └── CHANGELOG.md               # Version history
@@ -175,6 +180,7 @@ The agent validates its own output against a comprehensive checklist — correct
 |------|------|---------|
 | [`ANALYZE.md`](template/.agent/ANALYZE.md) | ~1,600 lines | The complete analysis instructions. This is the brain of the system. |
 | [`ADDITIONAL-RULES.md`](template/.agent/ADDITIONAL-RULES.md) | ~665 lines | Templates for optional domain-specific rules (API, database, deployment, git, observability, performance, accessibility, i18n). |
+| [`MULTI-AGENT-SETUP.md`](template/.agent/MULTI-AGENT-SETUP.md) | ~544 lines | How to configure Claude, Copilot, Junie, and generic agents to share rules without duplication. |
 
 ### Generated Files (the agent creates these)
 
@@ -194,7 +200,7 @@ The agent validates its own output against a comprehensive checklist — correct
 
 ## Key Design Decisions
 
-**Multi-agent, no duplication.** Rules live in `.ai/rules/` as a single source of truth. Claude, Copilot, Junie, and generic agents each get a thin pointer file. Edit rules once, every tool stays in sync. See the [Multi-Agent Setup Guide](docs/MULTI-AGENT-SETUP.md).
+**Multi-agent, no duplication.** Rules live in `.ai/rules/` as a single source of truth. Claude, Copilot, Junie, and generic agents each get a thin pointer file. Edit rules once, every tool stays in sync. See the [Multi-Agent Setup Guide](template/.agent/MULTI-AGENT-SETUP.md).
 
 **Agent-agnostic tasks.** The `.agent/` directory and ANALYZE.md work with any AI coding agent. The task format is plain Markdown that any tool or human can follow.
 
@@ -213,7 +219,7 @@ The agent validates its own output against a comprehensive checklist — correct
 | Document | Description |
 |----------|-------------|
 | [Implementation Guide](docs/IMPLEMENTATION-GUIDE.md) | Detailed step-by-step setup, .gitignore strategies, verification checklist, troubleshooting |
-| [Multi-Agent Setup](docs/MULTI-AGENT-SETUP.md) | How to configure Claude, Copilot, Junie, and generic agents without duplicating rules |
+| [Multi-Agent Setup](template/.agent/MULTI-AGENT-SETUP.md) | How to configure Claude, Copilot, Junie, and generic agents without duplicating rules |
 | [ANALYZE.md](template/.agent/ANALYZE.md) | The core instructions (read this to understand the full process) |
 | [Additional Rules](template/.agent/ADDITIONAL-RULES.md) | Templates for API, database, deployment, git, observability, performance, a11y, i18n rules |
 | [Changelog](docs/CHANGELOG.md) | Version history and changes |

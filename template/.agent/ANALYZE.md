@@ -53,7 +53,7 @@ AGENTS.md                           # Universal agent entry point (root of proje
 └── settings.json                   # Editor settings + Copilot instruction references
 ```
 
-> **Multi-agent architecture:** Rules live in `.ai/rules/` as a single source of truth. Each AI tool gets a thin pointer file. See [MULTI-AGENT-SETUP.md](../docs/MULTI-AGENT-SETUP.md) for details.
+> **Multi-agent architecture:** Rules live in `.ai/rules/` as a single source of truth. Each AI tool gets a thin pointer file. See [MULTI-AGENT-SETUP.md](MULTI-AGENT-SETUP.md) for details.
 
 ---
 
@@ -929,7 +929,7 @@ Create `.junie/guidelines.md` for JetBrains Junie. Reference `.ai/rules/` files.
 
 Create or update `.vscode/settings.json` with Copilot instruction file references pointing to `.ai/rules/`, and editor settings matching the project's formatting conventions.
 
-**See [MULTI-AGENT-SETUP.md](../docs/MULTI-AGENT-SETUP.md) for complete templates of each file.**
+**See [MULTI-AGENT-SETUP.md](MULTI-AGENT-SETUP.md) for complete templates of each file.**
 
 **Template for AGENTS.md:**
 
